@@ -3,3 +3,5 @@
 *.ip_user_files/
 *.runs/
 *.xpr
+vivado.log
+vivado.jou

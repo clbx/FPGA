@@ -1,36 +1,34 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: Elizabethtown College
-// Engineer: Clay Buxton
+// Company: 
+// Engineer: 
 // 
-// Create Date: 02/09/2019 08:02:42 PM
-// Design Name: 4 Bit Adder
+// Create Date: 02/11/2019 02:35:22 PM
+// Design Name: 
 // Module Name: fulladder
-// Project Name: 4 Bit Adder
-// Target Devices: Basys 3
-// Tool Versions: Vivado 2018.3
-// Description: Adds 4-bit numbers
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
 // 
-// Dependencies: halfadder.v
+// Dependencies: 
 // 
-// Revision: 0.02 - Project Finished
+// Revision:
 // Revision 0.01 - File Created
-// Additional Comments: None
+// Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module fulladder(carryin,in0,in1,out0,carry);
-    input carryin,in0,in1;
-    output out0,carry;
+module fulladder(
+    input a,b,cin,
+    output sum,cout
+    );
     
-    wire carry2xor0;
-    wire carry2xor1;
-    wire out2in1;
+    wire sum2sum, cout0, cout1;
     
-    halfadder(in0,in1,out2in1,carry2xor0);
-    halfadder(carryin,out2in1,out0,carry2xor1);
-    
-    and(carry,carry2xor0,carry2xor1);  
+    halfadder(a,b,sum2sum,cout0);
+    halfadder(sum2sum,cin,sum,cout1);
+    or(cout,cout0,cout1);
     
 endmodule

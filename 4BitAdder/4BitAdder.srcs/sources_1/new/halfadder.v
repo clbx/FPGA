@@ -3,28 +3,28 @@
 // Company: Elizabethtown College
 // Engineer: Clay Buxton
 // 
-// Create Date: 02/09/2019 08:02:42 PM
+// Create Date: 09/24/2018 06:53:13 PM
 // Design Name: 4 Bit Adder
-// Module Name: halfadder
+// Module Name: half-adder
 // Project Name: 4 Bit Adder
-// Target Devices: Basys 3
-// Tool Versions: Vivado 2018.3
-// Description: Adds 4-bit numbers
+// Target Devices: Basys3 FPGA
+// Tool Versions: Vuvadi 2018.2
+// Description: Half adder component for a 4 bit adder
 // 
-// Dependencies:
+// Dependencies: 
 // 
-// Revision: 0.02 - Project Finished
+// Revision: 1.0 - Project Finished
 // Revision 0.01 - File Created
-// Additional Comments: None
+// Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module halfadder(in0,in1,out0,carry);
-    input in0, in1;
-    output out0, carry;
+module halfadder(
+    input a, b,
+    output sum, cout
+    );
     
-    and(carry,in0,in1);
-    xor(out,in0,in1);
-    
+    xor(sum,a,b);
+    and(cout,a,b);
 endmodule
