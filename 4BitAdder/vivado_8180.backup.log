@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Feb 11 14:07:39 2019
+# Process ID: 8180
+# Current directory: U:/Public/EGRCS333/CS333/4BitAdder
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8076 U:\Public\EGRCS333\CS333\4BitAdder\4BitAdder.xpr
+# Log file: U:/Public/EGRCS333/CS333/4BitAdder/vivado.log
+# Journal file: U:/Public/EGRCS333/CS333/4BitAdder\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project U:/Public/EGRCS333/CS333/4BitAdder/4BitAdder.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-231] Project '4BitAdder.xpr' was created with a future version and may or may not perform reliably with this version of Vivado. It has been opened in read-only mode for the protection of unrecognized data. Use 'File | Save Project As...' if you wish to alter a copy of the project.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 904.957 ; gain = 171.371
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 11 14:23:39 2019...
