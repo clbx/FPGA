@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "U:/Public/EGRCS333/CS333/alu/alu.srcs/sources_1/new/ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "U:/Public/EGRCS333/CS333/alu/alu.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
