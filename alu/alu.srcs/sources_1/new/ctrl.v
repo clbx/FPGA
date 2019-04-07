@@ -78,7 +78,8 @@ module ctrl(
                 led = (A ^ B);
             4'b1001:
                 //~A
-                led = {1'b0,~A[5:0]};
+                led = {1'b0,~A[5:0]}; //The {} is a concatnate. this is needed becuase A is 6 bits, but LED is 7
+                                      //This ensures that the leading bit of LED is always 0 since otherwise it would output 1
             4'b1010:
                 //~B
                 led = {1'b0,~B[5:0]};
