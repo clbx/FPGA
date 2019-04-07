@@ -32,12 +32,20 @@ module ctrl(
     0001 -> A - B
     0010 -> A++
     0011 -> A--
-    0100 -> A & B
-    0101 -> A | B
-    0110 -> A ^ B    
+    0100 -> B++
+    0101 -> B--
+    0110 -> Bitwise AND
+    0111 -> Bitwise OR
+    1000 -> Bitwise XOR
+    1001 -> Bitwise NOT A
+    1010 -> Bitwise NOT B
+    1011 -> A << B
+    1100 -> B << A
+    1101 -> Light first LED if A > B
+    1110 -> Light first LED if B > A
+    1111 -> Light first LED if A = B
     */
-    
-    
+   
     always @(posedge clk)
     begin
         case(C)
@@ -54,17 +62,57 @@ module ctrl(
                 //A--
                 led <= A - 1'b1;
             4'b0100:
-                //A & B
-                led <= A & B;
+                //B++
+                led <= B + 1'b1;
             4'b0101:
-                //A | B
-                led <= A | B;
+                //B--
+                led <= B - 1'b1;
             4'b0110:
+                //A & B
+                led = (A & B);
+            4'b0111:
+                //A | B
+                led = (A | B);                
+            4'b1000:
                 //A ^ B
-                led <= A ^ B;
+                led = (A ^ B);
+            4'b1001:
+                //~A
+                led = {1'b0,~A[5:0]};
+            4'b1010:
+                //~B
+                led = {1'b0,~B[5:0]};
+            4'b1011:
+                //A << B
+                led = A << B;
+            4'b1100:
+                //B << A
+                led = B << A;
+                
+            4'b1101:
+                //Light LED[0] if A > B
+                if(A > B)
+                    led = 7'b0000001;
+                else
+                    led = 7'b0000000;
+            4'b1110:
+                //Light LED[0] if A < B
+                if(A < B)
+                    led = 7'b00000001;
+                else
+                    led = 7'b0000000;
+                    
+            4'b1111:
+                //Light LED[0] if A=B
+                if(A == B)
+                    led = 7'b0000001;
+                else
+                    led = 7'b0000000;          
             default: 
                 //Unimplemented opcode
                 led <= 7'b1111111;
         endcase
     end
+    
+
 endmodule

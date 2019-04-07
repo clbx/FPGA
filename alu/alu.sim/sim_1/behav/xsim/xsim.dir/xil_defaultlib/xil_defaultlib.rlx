@@ -3,4 +3,5 @@
 Dec  7 2018
 00:33:28
 U:/Public/EGRCS333/CS333/alu/alu.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
-U:/Public/EGRCS333/CS333/alu/alu.srcs/sources_1/new/ctrl.v,1553894906,verilog,,,,ctrl,,,,,,,,
+U:/Public/EGRCS333/CS333/alu/alu.srcs/sim_1/new/ctrl_testbench.v,1554154114,verilog,,,,ctrl_testbench,,,,,,,,
+U:/Public/EGRCS333/CS333/alu/alu.srcs/sources_1/new/ctrl.v,1554152022,verilog,,U:/Public/EGRCS333/CS333/alu/alu.srcs/sim_1/new/ctrl_testbench.v,,ctrl,,,,,,,,

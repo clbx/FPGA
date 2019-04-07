@@ -179,14 +179,14 @@ set_property PACKAGE_PIN U14 [get_ports {led[6]}]
 
 ##Pmod Header JC
 ##Sch name = JC1
-set_property PACKAGE_PIN K17 [get_ports {red}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {red}]
-#Sch name = JC2
-set_property PACKAGE_PIN M18 [get_ports {yellow}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {yellow}]
-#Sch name = JC3
-set_property PACKAGE_PIN N17 [get_ports {green}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {green}]
+#set_property PACKAGE_PIN K17 [get_ports {red}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {red}]
+##Sch name = JC2
+#set_property PACKAGE_PIN M18 [get_ports {yellow}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {yellow}]
+##Sch name = JC3
+#set_property PACKAGE_PIN N17 [get_ports {green}]					
+#	set_property IOSTANDARD LVCMOS33 [get_ports {green}]
 ##Sch name = JC4
 #set_property PACKAGE_PIN P18 [get_ports {top}]					
 #	set_property IOSTANDARD LVCMOS33 [get_ports {top}]
