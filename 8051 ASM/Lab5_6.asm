@@ -1,18 +1,15 @@
-;#1 Move 1,2,4,8 into registers in
-;register bank 0. This is R0-R7 which
-; is also 0x00 -0x07 in the RAM window
+;#1 Move 1,2,4,8 into registers in register bank 0. This is R0-R7 which is also 0x00 -0x07 
+;in the RAM window
             
-;The # sign must be put in front of a
-;number to signify it's a number
+;The # sign must be put in front of a number to signify it's a number
              
 MOV R0,#1 ;Moves the number 1 to R0
 MOV R1,#2 ;Moves the number 2 to R1
 MOV R2,#4 ;Moves the number 4 to R2
 MOV R3,#8 ;Moves the number 8 to R3
              
-;Now add them together and put it in
-;a 5th register. First let's move R0
-;to the acumulator and then we can add
+;Now add them together and put it in a 5th register. First let's move R0 to the acumulator
+;and then we can add
              
 MOV A,R0
 ADD A,R1
@@ -22,13 +19,10 @@ ADD A,R3
 MOV R4,A
 ;R4 now contains 0x0F
            
-;Now we want to push R4 to the stack
-;I don't belive we can push directly
-;from a register so we need to put it
-;on the accumulator first
+;Now we want to push R4 to the stack I don't belive we can push directly from a register;
+;so we need to put it on the accumulator first
              
-;Even though R4 is still in the ACC
-;Were going to do this for completion
+;Even though R4 is still in the ACC Were going to do this for completion
 MOV A,R4
 PUSH ACC ;Must be referenced as ACC
          ;Here isntead of A
@@ -39,9 +33,8 @@ PUSH ACC ;Must be referenced as ACC
 ;Bit 3 and 4 control where current
 ;Register bank is
 
-;Since Bank 1 is where the stack is
-;happening, we're going to use bank 2
-MOV PSW,#00010000B
+;Since Bank 1 is where the stack is happening, we're going to use bank 1
+MOV PSW,#00001000B
 
 ;Move values into registers
 MOV R0,#16
@@ -61,8 +54,8 @@ MOV R4,A ; Move it into Register 4
 MOV A,R4
 PUSH ACC 
 
-;Now change to use Register Bank 3  
-MOV PSW,#00011000B
+;Now change to use Register Bank 2  
+MOV PSW,#00010000B
 
 POP ACC  ;Pop off stack
 MOV R0,A ;Move to R0
@@ -76,6 +69,20 @@ ADD A,R1
 
 ;Move to memory location 30
 MOV 30H,A
+
+
+MOV PSW,#00011000B ;Moving to bank 3
+
+MOV R0, #0 ;R0 is our index, it will be incremented to keep track of which location to check
+MOV A, #17H ;Our max index, this will be decremented to keep track of the loop
+
+LOOP:
+	MOV R1, @R0
+	INC R0
+	DEC A
+	JNZ LOOP
+	
+
 
 
 
