@@ -1,74 +1,74 @@
-MOV SP,#50H
+;This technically doesn't follow the steps of the lab
+;But i think they're stupid and don't make much sense
+;This seems like a much better way to handle it. That 
+;doesn't include sitting around with a floating stack 
+;pointer up our ass
 
 
 
-;Move 1,2,4,8 into registers in register bank 0. This is R0-R7 which is also 0x00 -0x07 
-;in the RAM window
-            
-;The # sign must be put in front of a number to signify it's a number
-             
+MOV SP,#4FH ;Move the stack pointer down the memory map. Keeps it out of the way
+
+;-=[1]=-             
 MOV R0,#1 ;Moves the number 1 to R0
 MOV R1,#2 ;Moves the number 2 to R1
 MOV R2,#4 ;Moves the number 4 to R2
-MOV R3,#8 ;Moves the number 8 to R3
-             
-;Now add them together and put it in a 5th register. First let's move R0 to the acumulator
-;and then we can add
-             
-MOV A,R0
-ADD A,R1
-ADD A,R2
-ADD A,R3
-;Now move it back to a register
-MOV R4,A
-;R4 now contains 0x0F
-           
-;Now we want to push R4 to the stack I don't belive we can push directly from a register;
-;so we need to put it on the accumulator first
-             
-;Even though R4 is still in the ACC Were going to do this for completion
-MOV A,R4
-PUSH ACC ;Must be referenced as ACC instead of A here, unsure why
+     
+;Constants are defined with a leading #
+
+
+;-=[2]=-        
+MOV A,R0 ;Move R0 to the accumulator for addition
+ADD A,R1 ;Add R1
+ADD A,R2 ;Add R2
+
+MOV R3,A ;Move it to Register 3
+
+;-=[3]=-
+PUSH 3 ;Push register 4 to the stack
+
+
+;-=[4]=-
 
 ;To move to a new register bank We need to adjust the PSW register 
 ;Bit 3 and 4 control where current Register bank is
-
 ;Move to bank 1;
 MOV PSW,#00001000B
 
+
+
+;-=[5]=-
 ;Move values into registers
 MOV R0,#16
 MOV R1,#32
 MOV R2,#64
-MOV R3,#128
 
+;-=[6]=-
 ;Now add them
 MOV A,R0
 ADD A,R1
 ADD A,R2
-ADD A,R3
 
-MOV R4,A ; Move it into Register 4
+MOV R3,A ; Move it into Register 3
 
-;Now push it to the stack
-MOV A,R4
-PUSH ACC
+;-=[7]=-
+PUSH 3 ;Push register 3 to the stack
 
-;Now change to use Register Bank 2  
-MOV PSW,#00010000B
 
-POP ACC  ;Pop off stack
-MOV R0,A ;Move to R0
-POP ACC  ;Pop off stack
-MOV R1,A ;Move to R1
+;-=[8]=-
+MOV PSW,#00010000B ;Move to register bank 2
 
-;Now add
+;-=[9]=-
+POP 0  ;Pop off stack to register 2
 
-MOV R0, A
+;-=[10]=-
+POP 1  ;Pop off stack to register 1
+
+
+;-=[11]=-
+MOV R0, A ;Now add
 ADD A,R1
 
-;Move to memory location 30
-MOV 30H,A
+MOV 30H,A ;Putting it in memory location 
 
 
 MOV PSW,#00011000B ;Moving to bank 3
