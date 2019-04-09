@@ -1,4 +1,8 @@
-;#1 Move 1,2,4,8 into registers in register bank 0. This is R0-R7 which is also 0x00 -0x07 
+MOV SP,#50H
+
+
+
+;Move 1,2,4,8 into registers in register bank 0. This is R0-R7 which is also 0x00 -0x07 
 ;in the RAM window
             
 ;The # sign must be put in front of a number to signify it's a number
@@ -24,16 +28,12 @@ MOV R4,A
              
 ;Even though R4 is still in the ACC Were going to do this for completion
 MOV A,R4
-PUSH ACC ;Must be referenced as ACC
-         ;Here isntead of A
-         ;Don't know why
+PUSH ACC ;Must be referenced as ACC instead of A here, unsure why
 
-;To move to a new register bank
-;We need to adjust the PSW register
-;Bit 3 and 4 control where current
-;Register bank is
+;To move to a new register bank We need to adjust the PSW register 
+;Bit 3 and 4 control where current Register bank is
 
-;Since Bank 1 is where the stack is happening, we're going to use bank 1
+;Move to bank 1;
 MOV PSW,#00001000B
 
 ;Move values into registers
@@ -52,7 +52,7 @@ MOV R4,A ; Move it into Register 4
 
 ;Now push it to the stack
 MOV A,R4
-PUSH ACC 
+PUSH ACC
 
 ;Now change to use Register Bank 2  
 MOV PSW,#00010000B
@@ -77,7 +77,10 @@ MOV R0, #0 ;R0 is our index, it will be incremented to keep track of which locat
 MOV A, #17H ;Our max index, this will be decremented to keep track of the loop
 
 LOOP:
-	MOV R1, @R0
+	MOV R1, A
+	MOV A, @R0
+	PUSH ACC
+	MOV A,R1
 	INC R0
 	DEC A
 	JNZ LOOP
