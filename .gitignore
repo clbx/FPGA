@@ -2,7 +2,6 @@
 *.hw
 *.ip_user_files/
 *.runs/
-*.xpr
 *.sim/
 *.str
 vivado.log
