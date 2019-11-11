@@ -1,0 +1,151 @@
+19:59:27 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Clay\git\FPGA\temp_xsdb_launch_script.tcl
+19:59:29 INFO  : XSCT server has started successfully.
+19:59:29 INFO  : plnx-install-location is set to ''
+19:59:30 INFO  : Registering command handlers for Vitis TCF services
+19:59:30 INFO  : Successfully done setting XSCT server connection channel  
+19:59:30 INFO  : Successfully done query RDI_DATADIR 
+19:59:30 INFO  : Successfully done setting workspace for the tool. 
+20:01:55 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:01:58 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:02:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:02:07 INFO  : Jtag cable 'Digilent Basys3 210183A8A12EA' is selected.
+20:02:07 INFO  : 'jtag frequency' command is executed.
+20:02:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0' command is executed.
+20:02:09 INFO  : FPGA configured successfully with bitstream "C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit"
+20:02:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:02:09 INFO  : Context for processor 'microblaze_0' is selected.
+20:02:09 INFO  : System reset is completed.
+20:02:12 INFO  : 'after 3000' command is executed.
+20:02:12 INFO  : Context for processor 'microblaze_0' is selected.
+20:02:12 INFO  : The application 'C:/Users/Clay/git/FPGA/proc/Debug/proc.elf' is downloaded to processor 'microblaze_0'.
+20:02:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0
+fpga -file C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Clay/git/FPGA/proc/Debug/proc.elf
+----------------End of Script----------------
+
+20:02:12 INFO  : Memory regions updated for context PA
+20:02:12 INFO  : Memory regions updated for context PA
+20:02:12 INFO  : Context for processor 'microblaze_0' is selected.
+20:02:12 INFO  : 'con' command is executed.
+20:02:12 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:02:12 INFO  : Launch script is exported to file 'C:\Users\Clay\git\FPGA\.sdk\launch_scripts\single_application_debug\systemdebugger_proc_system_standalone.tcl'
+20:03:54 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:04:09 INFO  : Disconnected from the channel tcfchan#2.
+20:04:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:04:09 INFO  : Jtag cable 'Digilent Basys3 210183A8A12EA' is selected.
+20:04:09 INFO  : 'jtag frequency' command is executed.
+20:04:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0' command is executed.
+20:04:11 INFO  : FPGA configured successfully with bitstream "C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit"
+20:04:11 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:04:11 INFO  : Context for processor 'microblaze_0' is selected.
+20:04:11 INFO  : System reset is completed.
+20:04:14 INFO  : 'after 3000' command is executed.
+20:04:14 INFO  : Context for processor 'microblaze_0' is selected.
+20:04:14 INFO  : The application 'C:/Users/Clay/git/FPGA/proc/Debug/proc.elf' is downloaded to processor 'microblaze_0'.
+20:04:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0
+fpga -file C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Clay/git/FPGA/proc/Debug/proc.elf
+----------------End of Script----------------
+
+20:04:14 INFO  : Memory regions updated for context PA
+20:04:14 INFO  : Memory regions updated for context PA
+20:04:14 INFO  : Context for processor 'microblaze_0' is selected.
+20:04:14 INFO  : 'con' command is executed.
+20:04:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:04:14 INFO  : Launch script is exported to file 'C:\Users\Clay\git\FPGA\.sdk\launch_scripts\single_application_debug\systemdebugger_proc_system_standalone.tcl'
+20:04:47 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:05:55 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:06:05 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:06:12 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:06:24 INFO  : Disconnected from the channel tcfchan#3.
+20:06:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:06:24 INFO  : Jtag cable 'Digilent Basys3 210183A8A12EA' is selected.
+20:06:24 INFO  : 'jtag frequency' command is executed.
+20:06:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0' command is executed.
+20:06:25 INFO  : FPGA configured successfully with bitstream "C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit"
+20:06:26 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:06:26 INFO  : Context for processor 'microblaze_0' is selected.
+20:06:26 INFO  : System reset is completed.
+20:06:29 INFO  : 'after 3000' command is executed.
+20:06:29 INFO  : Context for processor 'microblaze_0' is selected.
+20:06:29 INFO  : The application 'C:/Users/Clay/git/FPGA/proc/Debug/proc.elf' is downloaded to processor 'microblaze_0'.
+20:06:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0
+fpga -file C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Clay/git/FPGA/proc/Debug/proc.elf
+----------------End of Script----------------
+
+20:06:29 INFO  : Memory regions updated for context PA
+20:06:29 INFO  : Memory regions updated for context PA
+20:06:29 INFO  : Context for processor 'microblaze_0' is selected.
+20:06:29 INFO  : 'con' command is executed.
+20:06:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:06:29 INFO  : Launch script is exported to file 'C:\Users\Clay\git\FPGA\.sdk\launch_scripts\single_application_debug\systemdebugger_proc_system_standalone.tcl'
+20:18:10 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:19:32 INFO  : Checking for BSP changes to sync application flags for project 'proc'...
+20:19:40 INFO  : Disconnected from the channel tcfchan#4.
+20:19:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:19:41 INFO  : Jtag cable 'Digilent Basys3 210183A8A12EA' is selected.
+20:19:41 INFO  : 'jtag frequency' command is executed.
+20:19:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0' command is executed.
+20:19:42 INFO  : FPGA configured successfully with bitstream "C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit"
+20:19:42 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:19:42 INFO  : Context for processor 'microblaze_0' is selected.
+20:19:42 INFO  : System reset is completed.
+20:19:45 INFO  : 'after 3000' command is executed.
+20:19:45 INFO  : Context for processor 'microblaze_0' is selected.
+20:19:45 INFO  : The application 'C:/Users/Clay/git/FPGA/proc/Debug/proc.elf' is downloaded to processor 'microblaze_0'.
+20:19:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Basys3 210183A8A12EA" && level==0} -index 0
+fpga -file C:/Users/Clay/git/FPGA/proc/_ide/bitstream/proc_wrapper.bit
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Clay/git/FPGA/proc/Debug/proc.elf
+----------------End of Script----------------
+
+20:19:45 INFO  : Memory regions updated for context PA
+20:19:45 INFO  : Memory regions updated for context PA
+20:19:45 INFO  : Context for processor 'microblaze_0' is selected.
+20:19:45 INFO  : 'con' command is executed.
+20:19:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:19:45 INFO  : Launch script is exported to file 'C:\Users\Clay\git\FPGA\.sdk\launch_scripts\single_application_debug\systemdebugger_proc_system_standalone.tcl'
