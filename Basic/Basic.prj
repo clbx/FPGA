@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="Basic" location="C:/Users/Clay/git/FPGA/Basic" platform="C:/Users/Clay/git/FPGA/BasicDesign_wrapper/export/BasicDesign_wrapper/BasicDesign_wrapper.xpfm" platformUID="xilinx:basys3::0.0(custom)" systemProject="Basic_system" sysConfig="BasicDesign_wrapper" runtime="cpp" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" language="CPP" mssSignature="f69ed6e3e3d05bc14a8ec3e2b26f59f9">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.528602330" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1686787055" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

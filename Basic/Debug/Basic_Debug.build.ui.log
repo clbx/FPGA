@@ -1,0 +1,28 @@
+2019-11-16T08:23:38.503642400255-08:23:38 **** Incremental Build of configuration Debug for project Basic ****
+000-make all 
+000-'Building file: ../src/main.cpp'
+000-'Invoking: MicroBlaze g++ compiler'
+000-mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/Users/Clay/git/FPGA/BasicDesign_wrapper/export/BasicDesign_wrapper/sw/BasicDesign_wrapper/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+000-../src/main.cpp: In function 'int main()':
+000/Basic/src/main.cpp12-1-1unused variable 'button' [-Wunused-variable]1-../src/main.cpp:12:5: warning: unused variable 'button' [-Wunused-variable]
+000-  u8 button,seg;
+000-     ^~~~~~
+000/Basic/src/main.cpp12-1-1unused variable 'seg' [-Wunused-variable]1-../src/main.cpp:12:12: warning: unused variable 'seg' [-Wunused-variable]
+000-  u8 button,seg;
+000-            ^~~
+000-'Finished building: ../src/main.cpp'
+000-' '
+000-'Building target: Basic.elf'
+000-'Invoking: MicroBlaze g++ linker'
+000-mb-g++ -Wl,-T -Wl,../src/lscript.ld -LC:/Users/Clay/git/FPGA/BasicDesign_wrapper/export/BasicDesign_wrapper/sw/BasicDesign_wrapper/standalone_domain/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Basic.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+000-'Finished building target: Basic.elf'
+000-' '
+000-'Invoking: MicroBlaze Print Size'
+000-mb-size Basic.elf  |tee "Basic.elf.size"
+000-   text	   data	    bss	    dec	    hex	filename
+000-   8512	    684	   3116	  12312	   3018	Basic.elf
+000-'Finished building: Basic.elf.size'
+000-' '
+00255-
+08:23:39 Build Finished (took 1s.102ms)
+
