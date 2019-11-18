@@ -1,1 +1,1 @@
-Empty application. Add your own sources.
+Cool program that runs on Microblaze
